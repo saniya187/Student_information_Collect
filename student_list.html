@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List All Student</title>
+</head>
+<body>
+    <h1>Student Application</h1>
+    <a href="{% url 'student_create' %}">Add Student</a>
+     <table border="1" cellpadding="10" cellspacing="10">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Age</th>
+        </tr>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{student.id}} </td>
+                <td>{{student.name}} </td>
+                <td>{{student.email}} </td>
+                <td>{{student.course}} </td>
+                <td>{{student.age}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
